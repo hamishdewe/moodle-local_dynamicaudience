@@ -8,7 +8,8 @@ require_once($CFG->libdir.'/formslib.php');
 require_once($CFG->dirroot.'/cohort/lib.php');
 //require_once('rule.php');
 
-use coursecat;
+use cohort_update_cohort;
+use core_course_category;
 use context_system;
 use context_coursecat;
 use context;
@@ -151,12 +152,8 @@ class audience_form extends moodleform {
         return $errors;
     }
 
-
-
     protected function get_category_options($currentcontextid) {
-        global $CFG;
-        require_once($CFG->libdir. '/coursecatlib.php');
-        $displaylist = coursecat::make_categories_list('moodle/cohort:manage');
+        $displaylist = core_course_category::make_categories_list('moodle/cohort:manage');
         $options = array();
         $syscontext = context_system::instance();
         if (has_capability('moodle/cohort:manage', $syscontext)) {
