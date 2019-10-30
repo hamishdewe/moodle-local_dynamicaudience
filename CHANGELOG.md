@@ -1,5 +1,8 @@
 TODO
 
+20191031
+- Updates to align with Moodle 3.7
+
 20190227
 - On save new dynamic audience, redirect to rule creation page
 - Add in-or-equal comparison for text fields
